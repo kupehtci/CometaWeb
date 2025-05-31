@@ -59,7 +59,7 @@ const HomePage = ({ files }: HomePageProps) => {
           </div>
         </section>
 
-        <section className="hero-section-2">
+        <section className="hero-section renderer-section">
           <div className="hero-content">
             <h1>Cometa Renderer</h1>
             <p className="hero-subtitle">Start programming games from scratch with powerfull visuals</p>
