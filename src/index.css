@@ -32,6 +32,74 @@ body {
 }
 
 /* Dark mode support */
+.dark-mode {
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+}
+
+.dark-mode .markdown-container,
+.dark-mode .quick-links,
+.dark-mode .loading, 
+.dark-mode .error, 
+.dark-mode .loading-app, 
+.dark-mode .error-app, 
+.dark-mode .select-doc-message {
+  background-color: #2a2a2a;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.dark-mode .markdown-container h1,
+.dark-mode .markdown-container h2,
+.dark-mode .markdown-container h3,
+.dark-mode .markdown-container h4,
+.dark-mode .markdown-container h5,
+.dark-mode .markdown-container h6 {
+  color: #e2e2e2;
+  border-color: #444;
+}
+
+.dark-mode .markdown-container p,
+.dark-mode .markdown-container ul,
+.dark-mode .markdown-container ol,
+.dark-mode .markdown-container table th,
+.dark-mode .markdown-container table td,
+.dark-mode .markdown-container code,
+.dark-mode .markdown-container pre > code {
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.dark-mode .markdown-container table th,
+.dark-mode .markdown-container table td {
+  border-color: #444;
+}
+
+.dark-mode .markdown-container table tr {
+  background-color: #2a2a2a;
+  border-top-color: #444;
+}
+
+.dark-mode .markdown-container table tr:nth-child(2n) {
+  background-color: #333;
+}
+
+.dark-mode .markdown-container code {
+  background-color: rgba(200, 200, 200, 0.1);
+}
+
+.dark-mode .quick-links li:hover {
+  background-color: #333;
+}
+
+.dark-mode .quick-links a {
+  color: #61dafb;
+}
+
+.dark-mode .home-page h1,
+.dark-mode .quick-links h2 {
+  color: #e2e2e2;
+}
+
+/* Media query for system preference is kept for initial load before JS runs */
 @media (prefers-color-scheme: dark) {
   :root {
     color: rgba(255, 255, 255, 0.87);

@@ -22,7 +22,8 @@ function App() {
           'advanced-features.md',
           'api-reference.md', 
           'cometa-layer.md', 
-          'cometa-lightning.md'
+          'cometa-lightning.md',
+          'cometa-shaders.md'
         ]
         
         setFiles(markdownFiles)
