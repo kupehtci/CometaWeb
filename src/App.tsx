@@ -15,12 +15,8 @@ function App() {
         setLoading(true)
         setError(null)
         
-        // In a real application, you would have a backend API to list files
-        // For this demo, we'll use a static list of the files we created
         const markdownFiles = [
           'getting-started.md',
-          'advanced-features.md',
-          'api-reference.md', 
           'cometa-layer.md', 
           'cometa-lightning.md',
           'cometa-shaders.md'

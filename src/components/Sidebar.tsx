@@ -18,7 +18,7 @@ const Sidebar = ({ files }: SidebarProps) => {
 
   return (
     <div className="sidebar">
-      <h2>Documents</h2>
+      <h2>Cometa Framework</h2>
       <ul>
         {files.map((file) => {
           const fileName = file.replace('.md', '');
