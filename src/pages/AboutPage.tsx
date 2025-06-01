@@ -1,12 +1,24 @@
 
 
 import Layout from '../components/Layout';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function AboutPage() {
   const [files, setFiles] = useState<string[]>([]);
   
-  setFiles([]);
+  const fetchDocsList = async () => {
+    try {
+      const response = await fetch('/docs');
+      const data = await response.json();
+      setFiles(data);
+    } catch (error) {
+      console.error('Error fetching docs list:', error);
+    }
+  };
+
+  useEffect(() => {
+    fetchDocsList();
+  })
 
   return (
     <Layout files={files}>
