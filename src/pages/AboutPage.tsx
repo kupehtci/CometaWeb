@@ -6,14 +6,6 @@ import { useEffect, useState } from 'react';
 function AboutPage() {
   const [files, setFiles] = useState<string[]>([]);
 
-  useEffect(() => {
-    // Fetch markdown files for the Layout component
-    fetch('/docs')
-      .then(response => response.json())
-      .then(data => setFiles(data))
-      .catch(error => console.error('Error fetching docs:', error));
-  }, []);
-
   return (
     <Layout files={files}>
       <div className="about-page">
@@ -28,9 +20,8 @@ function AboutPage() {
           <h2>About Me</h2>
           <div className="about-card">
             <p>
-              {/* Personal introduction to be filled */}
-              I am an undergraduate student passionate about computer science and video game development. 
-              This section can be expanded with more personal details about your background, interests, and career goals.
+              I am an undergraduate student passionate about computer science and video game development from scratch.  
+              I am currently studying at Universidad San Jorge in Zaragoza, developing the TFG or Final Grade Work as its shown in this web page. 
             </p>
           </div>
         </section>
@@ -142,6 +133,22 @@ function AboutPage() {
               <p className="company">Hiberus</p>
               <p className="date">June 2023 - October 2023</p>
               <p className="description">Automation for systems deployments using Terraform. Deploy, monitor, maintain and configure cloud infraestructures and on-premises systems.</p>
+            </div>
+          </div>
+        </section>
+
+        <section className="about-section">
+          <h2>Certifications</h2>
+          <div className="about-card">
+          <div className="experience-item">
+              <h3>Architecting on AWS</h3>
+              <p className="company">Itera Process Spain</p>
+              <p className="date">November 2024</p>
+              <p className="description">
+                Architecting on AWS is a curse that allow me to design scalable, elastic, secure and high available aplications on AWS. 
+                Within the curse, I have learned about AWS solutions architecting patterns common in this cloud environment and all the resources that it offers to fulfill common neccesities.
+              </p>
+              <a href="https://www.acreditta.com/credential/1e7a03b2-79d3-406b-a0d4-8caadd57d6f9?utm_source=linkedin_post&resource_type=badge&resource=1e7a03b2-79d3-406b-a0d4-8caadd57d6f9" target="_blank" rel="noopener noreferrer" className="project-link">Acreditation link</a>
             </div>
           </div>
         </section>

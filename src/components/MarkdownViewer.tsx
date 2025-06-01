@@ -3,6 +3,7 @@ import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneDark } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 import remarkGfm from 'remark-gfm';
+import rehypeRaw from 'rehype-raw';
 
 interface MarkdownViewerProps {
   fileName: string;
@@ -62,6 +63,7 @@ const MarkdownViewer = ({ fileName }: MarkdownViewerProps) => {
     <div className="markdown-container">
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
+        rehypePlugins={[rehypeRaw]}
         components={{
           code({ style, className, children, ...props } : CodeProps) {
             const match = /language-(\w+)/.exec(className || '');

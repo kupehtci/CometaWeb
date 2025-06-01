@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Sidebar from './Sidebar';
 import { useTheme } from '../context/ThemeContext';
+import  cometaLogo  from '../assets/cometa.svg'; 
 
 interface LayoutProps {
   children: ReactNode;
@@ -18,16 +19,17 @@ const Layout = ({ children, files }: LayoutProps) => {
       <div className="main-content-wrapper">
         <nav className="navbar">
           <div className="nav-links">
+          <img src={cometaLogo} width={30}></img>
             <Link to="/" className={location.pathname === '/' ? 'active' : ''}>
               Home
             </Link>
             <Link 
-              to={`/docs/${files[0]?.replace('.md', '')}`} 
+              to={`/docs/getting-started`} 
               className={location.pathname.includes('/docs') ? 'active' : ''}
             >
               Docs
             </Link>
-            <Link to="about" className={location.pathname === '/about' ? 'active' : ''}>
+            <Link to="/about" className={location.pathname === '/about' ? 'active' : ''}>
               About
             </Link>
           </div>

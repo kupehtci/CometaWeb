@@ -1,7 +1,9 @@
 
-### Layer
+# Cometa - Layer
 
 Layers are abstract classed that can be inserted within the Onion layered system and handled its communication between layers by the event bus.
+
+They can be used to add functionalities to the engine and or the game in an structured way. It preserves order of rendering and order of event propagation. 
 
 To implement a Layer it needs to fulfill this minimal template: 
 
@@ -31,6 +33,23 @@ public:
     }
 };  
 ```
+
+### Layer Order
+Layers are added to the engine in the order that they are added to the `Engine::GetInstancePtr()->PushLayer(Layer* layer)` function.
+
+The order is preserved in the rendering and in the event propagation.
+
+So if you add a layer A, then a layer B, then a layer C, the order for event propagation will be:
+1. Layer A
+2. Layer B
+3. Layer C
+
+And the order for rendering will be:
+1. Layer C
+2. Layer B
+3. Layer A
+
+The order of execution is <span style="color:red;">important</span>, as you can use a layer similar to built-in `UILayer` to handle user input. And this layer needs to be added first, in order to receive the user input before the other layers and be rendered the last, so appears on top of the other layers.
 
 ### Event Subscription
 

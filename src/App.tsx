@@ -20,7 +20,9 @@ function App() {
           'getting-started.md',
           'cometa-layer.md', 
           'cometa-lightning.md',
-          'cometa-shaders.md'
+          'cometa-shaders.md',
+          'html-test.md', 
+          'markdown-cheat-sheet.md'
         ]
         
         setFiles(markdownFiles)
