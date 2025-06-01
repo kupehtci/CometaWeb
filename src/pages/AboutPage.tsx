@@ -1,10 +1,12 @@
 
 
 import Layout from '../components/Layout';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 function AboutPage() {
   const [files, setFiles] = useState<string[]>([]);
+  
+  setFiles([]);
 
   return (
     <Layout files={files}>
