@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import './App.css'
 import HomePage from './pages/HomePage'
 import DocPage from './pages/DocPage'
+import AboutPage from './pages/AboutPage'
 
 function App() {
   const [files, setFiles] = useState<string[]>([])
@@ -47,6 +48,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage files={files} />} />
         <Route path="/docs/:fileName" element={<DocPage files={files} />} />
+        <Route path="/about" element={< AboutPage/>} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>

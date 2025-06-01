@@ -27,6 +27,9 @@ const Layout = ({ children, files }: LayoutProps) => {
             >
               Docs
             </Link>
+            <Link to="about" className={location.pathname === '/about' ? 'active' : ''}>
+              About
+            </Link>
           </div>
           <button className="theme-toggle-nav" onClick={toggleTheme}>
             {theme === 'light' ? (
