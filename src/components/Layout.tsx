@@ -2,7 +2,8 @@ import type { ReactNode } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Sidebar from './Sidebar';
 import { useTheme } from '../context/ThemeContext';
-import  cometaLogo  from '../assets/cometa.svg'; 
+import cometaLogo from '../assets/cometa.svg'; 
+import { useState, useEffect } from 'react';
 
 interface LayoutProps {
   children: ReactNode;
@@ -12,14 +13,46 @@ interface LayoutProps {
 const Layout = ({ children, files }: LayoutProps) => {
   const location = useLocation();
   const { theme, toggleTheme } = useTheme();
-  
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  // Close sidebar on route change (mobile)
+  useEffect(() => {
+    setSidebarOpen(false);
+  }, [location.pathname]);
+
+  const isDocs = location.pathname.includes('/docs');
+
   return (
-    <div className={`app-container ${!location.pathname.includes('/docs') ? 'no-sidebar' : ''}`}>
-      {location.pathname.includes('/docs') && <Sidebar files={files} />}
+    <div className={`app-container ${!isDocs ? 'no-sidebar' : ''} ${sidebarOpen ? 'sidebar-open' : ''}`}>
+      {isDocs && (
+        <>
+          <Sidebar files={files} />
+          {/* Overlay for mobile */}
+          <div 
+            className={`sidebar-overlay${sidebarOpen ? ' visible' : ''}`}
+            onClick={() => setSidebarOpen(false)}
+            style={{ display: sidebarOpen ? 'block' : 'none' }}
+          />
+        </>
+      )}
       <div className="main-content-wrapper">
         <nav className="navbar">
           <div className="nav-links">
-          <img src={cometaLogo} width={30}></img>
+            {/* Hamburger for mobile */}
+            {isDocs && (
+              <button 
+                className="sidebar-toggle-btn" 
+                onClick={() => setSidebarOpen(!sidebarOpen)}
+                aria-label="Toggle sidebar"
+              >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect y="4" width="24" height="2" rx="1" fill="currentColor"/>
+                  <rect y="11" width="24" height="2" rx="1" fill="currentColor"/>
+                  <rect y="18" width="24" height="2" rx="1" fill="currentColor"/>
+                </svg>
+              </button>
+            )}
+            <img src={cometaLogo} width={30} alt="Cometa Logo" />
             <Link to="/" className={location.pathname === '/' ? 'active' : ''}>
               Home
             </Link>
