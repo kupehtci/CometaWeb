@@ -44,12 +44,24 @@ function AboutPage() {
           <h2>Education</h2>
           <div className="about-card">
             <div className="education-item">
-              <h3>Computer Science & Video Game Design and Development</h3>
-              <p className="institution">{/* University name to be filled */}</p>
-              <p className="date">{/* Years of study to be filled */}</p>
+              <h3>Double degree in Computer Engineering + Video Game Design and Development</h3>
+              <p className="institution">San Jorge University</p>
+              <p className="date">2020 - Present</p>
               <p className="description">{/* Description of studies to be filled */}</p>
             </div>
-            {/* Additional education items can be added here */}
+            <div className="education-item">
+              <h3>Advanced vocational training in Telecomunications and Computer systems</h3>
+              <p className="institution">Salesianos Zaragoza</p>
+              <p className="date">2018 - 2020</p>
+              <p className="description">{/* Description of studies to be filled */}</p>
+            </div>
+            <div className="education-item">
+              <h3>Medium vocational training in Telecomunications and Computer systems</h3>
+              <p className="institution">Salesianos Zaragoza</p>
+              <p className="date">2016 - 2018</p>
+              <p className="description">{/* Description of studies to be filled */}</p>
+            </div>
+            
           </div>
         </section>
 

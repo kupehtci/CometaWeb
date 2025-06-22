@@ -1,11 +1,12 @@
 # COMETA
 
-Cometa is custom Game Engine Framework built from scratch using OpenGL as the RendererAPI and GLFW + GLAD to handle modern OpenGL. 
+Cometa Framework is custom Game Development Framework built from scratch using OpenGL as the RendererAPI and GLFW + GLAD to handle modern OpenGL. 
 
 This engine is intended to provide a foundation or a base for common game features such as rendering, advanced input handling and scene management. 
 
 ### Features
 
+* Cometa Render: Provides a robust rendering system with support for rendering Meshed and materials integrated with dynamic lightning and shadows out-of-the-box.
 * OpenGL Rendering: Efficient rendering pipeline with integrated and custom GLSL shaders. 
 * GLFW for window management: Handle the window creation and input. 
 * GLAD for moder OpenGL Loading: Ensures the cross platform compatibility when loading OpenGL functions. 
@@ -17,9 +18,21 @@ This engine is intended to provide a foundation or a base for common game featur
 * Scene Management: System to handle different scenes and their components.
 * Input Handling: System to handle user input and events.
 
-### Current State
+## Getting Started
 
-Cometa is already in its early stages and it is still in development.
+Cometa Framework is stored in Github and it is recommended to clone the repository and use it as a submodule.
+As Cometa use other repositories and systems as dependencies and this ones are handled as git submodules, in order to pull them together clone the repository: 
+
+```bash
+git clone --recurse-submodules https://github.com/kupehtci/Cometa.git
+```
+
+Or in case you only want to use Cometa Render and not the whole game developement framework, you can clone only the Cometa Render repository:
+```bash
+git clone --recurse-submodules https://github.com/kupehtci/CometaRender.git
+```
+
+The following steps needs to be done depending on the OS you are using:
 
 ### MacOS Getting Started 
 To get started with Cometa, you will need to have the following installed: 
@@ -44,8 +57,12 @@ To use it you need to use the built-in script:
 ./build.sh -t windows
 ```
 
+### Current State
+
+Cometa Framework and Render are already in version 1.0.0, fully available and ready to start implementing yout videogame.
+
 ### License
-Cometa is under GPLv3 LICENCE.
+Both Cometa Render and Cometa Framework are under MIT LICENCE.
 
 ### Author
 Daniel Laplana Gimeno

@@ -27,6 +27,3 @@ ERROR: 0:76: Use of undeclared identifier 'num_lights'
 ```
 
 This will show the errors that OpenGL's GLSL compiled detect upon program compilation. 
-
-
-

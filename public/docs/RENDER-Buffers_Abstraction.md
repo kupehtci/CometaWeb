@@ -1,6 +1,4 @@
-
-
-### Buffers Abstraction
+# Buffers Abstraction
 
 Most Rendering APIs like OpenGL, Vulkan or DirectX depend on the use of buffers to improve the exchange of data between the CPU and GPU using the VRAM or VideoRam (TODO REVISE)
 

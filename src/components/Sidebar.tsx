@@ -22,10 +22,12 @@ const Sidebar = ({ files }: SidebarProps) => {
       <ul>
         {files.map((file) => {
           const fileName = file.replace('.md', '');
-          const displayName = fileName
+          var displayName = fileName
             .split('-')
             .map(word => word.charAt(0).toUpperCase() + word.slice(1))
             .join(' ');
+
+          displayName = displayName.replace(/_/g, ' ');
           
           return (
             <li key={fileName} className={activeFile === fileName ? 'active' : ''}>
